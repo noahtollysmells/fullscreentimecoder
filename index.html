@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fullscreen Timecode</title>
+    <!-- Google Fonts for countdown look -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div id="app">
+      <div id="branding">
+        <img src="assets/logo.png" alt="Logo" id="brandLogo">
+      </div>
+      <div id="status">Initializing…</div>
+      <div id="timecode">--:--:--:--</div>
+      <div id="controls">
+        <button id="fsBtn">Enter Fullscreen</button>
+        <label><input type="checkbox" id="showFps"> Show FPS</label>
+        <label for="themeSelect">Theme</label>
+        <select id="themeSelect">
+          <option value="cyan">Cyan on Black</option>
+          <option value="red">Red on Black</option>
+          <option value="green">Green on Black</option>
+          <option value="light">Dark on Light</option>
+          <option value="custom">Custom…</option>
+        </select>
+        <input type="color" id="themeColor" title="Custom color" style="display:none">
+        <label for="fontSelect">Font</label>
+        <select id="fontSelect">
+          <option value="orbitron">Orbitron (Countdown)</option>
+          <option value="sharetech">Share Tech Mono</option>
+          <option value="robotoslab">Roboto Slab</option>
+          <option value="system">System UI</option>
+          <option value="custom">Custom…</option>
+        </select>
+        <input type="text" id="fontCustom" placeholder="Enter CSS font-family" style="display:none;min-width:180px">
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

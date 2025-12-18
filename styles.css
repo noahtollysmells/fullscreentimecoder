@@ -1,0 +1,78 @@
+:root{
+  --bg: #000;
+  --fg: rgb(14, 238, 255);
+  --muted: rgba(255,255,255,0.12);
+  --base-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-family: var(--base-font);
+}
+html,body{
+  height:100%;
+  margin:0;
+  background:var(--bg);
+  color:var(--fg);
+  font-family: var(--font-family);
+}
+#app{
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+#status{
+  position:fixed;
+  top:8px;
+  left:8px;
+  font-size:14px;
+  opacity:.9;
+}
+
+/* Branding */
+#branding{position:absolute;top:6vh;left:50%;transform:translateX(-50%);display:flex;align-items:center;justify-content:center}
+#brandLogo{max-width:38vw;max-height:22vh;filter:drop-shadow(0 6px 18px rgba(0,0,0,0.8));}
+#controls{
+  position:fixed;
+  bottom:12px;
+  left:12px;
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+#timecode{
+  font-size:12vw;
+  line-height:0.9;
+  font-weight:900;
+  letter-spacing:0.02em;
+  user-select:none;
+}
+
+/* emphasize frame digits: make the final :FF larger */
+#timecode{font-variant-numeric:tabular-nums;}
+/* dramatic, "deadly countdown" default styling */
+#timecode em{font-size:1.35em;display:inline-block;transform:translateY(6%);padding-left:0.2em}
+#timecode{letter-spacing:0.02em;text-transform:uppercase;}
+#timecode.orbitron{font-family: 'Orbitron', var(--font-family);text-shadow:0 6px 18px rgba(255,0,0,0.12), 0 0 18px rgba(255,0,0,0.08);}
+#timecode.countdown-red{color:#ff3b30;text-shadow:0 4px 18px rgba(255,60,60,0.25),0 0 36px rgba(255,20,20,0.2);}
+
+@media (max-width:900px){
+  #branding{top:4vh}
+}
+@media (max-width:600px){
+  #timecode{ font-size:18vw }
+  #brandLogo{max-width:62vw}
+}
+
+/* overall polish */
+#app{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0) 40%)}
+
+@media (max-width:600px){
+  #timecode{ font-size:18vw }
+}
+
+button{padding:8px 12px;font-size:14px;border-radius:6px;border:0;background:#111;color:var(--fg)}
+label{font-size:14px;color:var(--fg)}
+select, input[type="color"]{background:#111;color:var(--fg);border-radius:6px;padding:6px;border:0}
+
+/* fullscreen tweaks */
+:fullscreen #timecode{ font-size:18vh }
